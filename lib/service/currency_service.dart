@@ -7,7 +7,7 @@ class CurrencyService {
   Future<dynamic> getCurrency() async {
     try {
       Response response = await DioConfig.createRequest()
-          .get("https://nbu.uz/uz/exchange-rates/json/");
+          .get("https://nbu.uz/uz/exchange-rates/json/a");
       if (response.statusCode == 200) {
         return (response.data as List)
             .map((e) => CurrencyModel.fromJson(e))

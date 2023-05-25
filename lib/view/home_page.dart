@@ -1,4 +1,5 @@
 import 'package:currency/model/currency_model.dart';
+import 'package:currency/service/currency_service.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,6 +12,7 @@ class HomePage extends StatelessWidget {
         title: const Text("Home"),
       ),
       body: FutureBuilder(
+        future: CurrencyService().getCurrency(),
         builder: (context, AsyncSnapshot snapshot) {
           if (!snapshot.hasData) {
             return const Center(
